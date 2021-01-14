@@ -6,8 +6,6 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +19,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import ma.ac.upf.linequiz.bin.ThemeDuTest;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -57,10 +54,9 @@ public class TestEntity implements Serializable {
 	@Column(name = "nbr_questions", nullable = false)
 	private Short nbrQuestions;
 	
-	// EnumType.STRING : https://www.baeldung.com/jpa-persisting-enums-in-jpa
-	@Column(name = "theme_du_test", nullable = false)
-	@Enumerated(EnumType.STRING)
-	private ThemeDuTest themeDuTest;
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "theme_du_test", nullable = false)
+	private Theme themeDuTest;
 	
 	@Column(name = "description", nullable = true)
 	private String description;
@@ -70,7 +66,7 @@ public class TestEntity implements Serializable {
 	private List<DateDuTestEntity> lsDateDuTests;
 	
 	
-	public TestEntity(List<QuestionEntity> lsQuestions, Short nbrSegondsParQuestion, Short nbrQuestions, ThemeDuTest themeDuTest,
+	public TestEntity(List<QuestionEntity> lsQuestions, Short nbrSegondsParQuestion, Short nbrQuestions, Theme themeDuTest,
 			String description, List<DateDuTestEntity> lsDateDuTests) {
 		super();
 		this.lsQuestions = lsQuestions;

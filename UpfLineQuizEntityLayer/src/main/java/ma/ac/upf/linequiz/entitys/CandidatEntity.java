@@ -33,7 +33,6 @@ public class CandidatEntity implements Serializable {
 
 	@Id
 	@Column(name = "id_candidat")
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
 	@Column(name="nom", length=30, nullable=false)
