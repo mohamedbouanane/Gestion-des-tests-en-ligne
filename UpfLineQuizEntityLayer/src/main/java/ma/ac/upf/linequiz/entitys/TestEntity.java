@@ -1,6 +1,6 @@
 package ma.ac.upf.linequiz.entitys;
 
-import java.time.OffsetDateTime;
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -31,7 +31,12 @@ import ma.ac.upf.linequiz.bin.ThemeDuTest;
 
 @Entity
 @Table(name = "test")
-public class TestEntity {
+public class TestEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8148111060080731353L;
 
 	@Id
 	@Column(name = "id_test")
@@ -59,21 +64,21 @@ public class TestEntity {
 	
 	@Column(name = "description", nullable = true)
 	private String description;
-	/*
-	// A corriger
-	@Column(name = "date_heur_test_fk", columnDefinition = "TIMESTAMP WITH TIME ZONE", nullable = false)
-	//private List<OffsetDateTime> lsDateHeurTest;
-	private OffsetDateTime lsDateHeurTest;
-	*/
+	
+	@OneToMany(fetch = FetchType.LAZY)
+	@JoinColumn(name = "date_heur_test_fk", nullable = false)
+	private List<DateDuTestEntity> lsDateDuTests;
+	
+	
 	public TestEntity(List<QuestionEntity> lsQuestions, Short nbrSegondsParQuestion, Short nbrQuestions, ThemeDuTest themeDuTest,
-			String description, List<OffsetDateTime> lsDateHeurTest) {
+			String description, List<DateDuTestEntity> lsDateDuTests) {
 		super();
 		this.lsQuestions = lsQuestions;
 		this.nbrSegondsParQuestion = nbrSegondsParQuestion;
 		this.nbrQuestions = nbrQuestions;
 		this.themeDuTest = themeDuTest;
 		this.description = description;
-		//this.lsDateHeurTest = lsDateHeurTest;
+		this.lsDateDuTests = lsDateDuTests;
 	}
 	
 }

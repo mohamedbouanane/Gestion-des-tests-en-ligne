@@ -59,16 +59,9 @@ public class TestServiceImpl implements TestService {
 	}
 
 	@Override
-	public boolean exists(TestEntity obj) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean existsById(Long id) {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
 	
 }

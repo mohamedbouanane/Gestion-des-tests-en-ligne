@@ -3,6 +3,9 @@ package ma.ac.upf.linequiz.entitys;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Entity;
+
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,7 +24,12 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "candidat")
-public class CandidatEntity {
+public class CandidatEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5333008388870411418L;
 
 	@Id
 	@Column(name = "id_candidat")

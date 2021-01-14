@@ -1,5 +1,6 @@
 package ma.ac.upf.linequiz.entitys;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -27,7 +28,12 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "question")
-public class QuestionEntity {
+public class QuestionEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1775875953575489400L;
 
 	@Id
 	@Column(name="id_question", unique = true, nullable=false)

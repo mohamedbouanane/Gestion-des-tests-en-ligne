@@ -59,12 +59,6 @@ public class CandidatureServiceImpl implements CandidatureService {
 	}
 
 	@Override
-	public boolean exists(CandidatureEntity obj) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean existsById(Long id) {
 		// TODO Auto-generated method stub
 		return false;

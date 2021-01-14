@@ -59,12 +59,6 @@ public class QuestionServiceImpl implements QuestionService{
 	}
 
 	@Override
-	public boolean exists(QuestionEntity obj) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean existsById(Long id) {
 		// TODO Auto-generated method stub
 		return false;

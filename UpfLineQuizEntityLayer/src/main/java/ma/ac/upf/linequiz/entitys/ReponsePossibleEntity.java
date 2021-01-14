@@ -1,5 +1,7 @@
 package ma.ac.upf.linequiz.entitys;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -21,7 +23,12 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "reponse_possible")
-public class ReponsePossibleEntity {
+public class ReponsePossibleEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5461003393370452036L;
 
 	@Id
 	@Column(name="id_reponse_possible", unique = true, nullable=false)

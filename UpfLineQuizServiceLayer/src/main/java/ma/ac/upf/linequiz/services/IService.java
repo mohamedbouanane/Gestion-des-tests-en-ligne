@@ -42,10 +42,6 @@ public interface IService <T,ID> {
 	 */
 	void deleteAll(Iterable<T> objs);
 	
-	/**
-	 * Check if object exist in database.
-	 */
-	boolean exists (T obj);
 	
 	/**
 	 * Check if object exist in database by id.

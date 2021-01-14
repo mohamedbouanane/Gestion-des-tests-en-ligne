@@ -5,8 +5,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class HomeController {
 
+	// @ResponseBody ?????????
 	@RequestMapping("/")
-	public String home() {
+	public @ResponseBody String home() {
 		return "home";	
 	}
 

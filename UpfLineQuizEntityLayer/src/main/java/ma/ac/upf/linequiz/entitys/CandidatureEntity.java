@@ -1,5 +1,6 @@
 package ma.ac.upf.linequiz.entitys;
 
+import java.io.Serializable;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -29,7 +30,12 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "candidature")
-public class CandidatureEntity {
+public class CandidatureEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3970969181848861567L;
 
 	@Id
 	@Column(name="id_candidature")
@@ -40,8 +46,7 @@ public class CandidatureEntity {
 	@JoinColumn(name = "candidat_fk", nullable=false)
 	private CandidatEntity candidat;
 	
-	// OffsetDateTime : https://www.baeldung.com/jpa-java-time
-	@Column(name = "dateheur_du_test", columnDefinition = "TIMESTAMP WITH TIME ZONE")
+	@Column(name = "dateheur_du_test", nullable=false /*, columnDefinition = "TIMESTAMP WITH TIME ZONE"*/)
 	private OffsetDateTime  dateHeurDuTest;
 	
 	@OneToMany(fetch = FetchType.LAZY)
@@ -58,9 +63,9 @@ public class CandidatureEntity {
 	public CandidatureEntity(CandidatEntity candidat, OffsetDateTime dateHeurDuTest , String codeCandidature, String noteFinale) {
 		super();
 		this.candidat = candidat;
-		//this.dateHeurDuTest = dateHeurDuTest;
+		this.dateHeurDuTest = dateHeurDuTest;
 		this.codeCandidature = codeCandidature;
-		this.noteFinale = noteFinale;
+		this.noteFinale = noteFinale;		
 	}
 		
 }
