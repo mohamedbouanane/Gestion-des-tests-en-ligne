@@ -10,24 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 @Entity
 @Table(name = "theme")
 public class Theme implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 7755563995629845603L;
 	
 	@Id

@@ -12,27 +12,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 @Entity
 @Table(name = "test")
 public class TestEntity implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8148111060080731353L;
 
 	@Id
@@ -54,7 +47,7 @@ public class TestEntity implements Serializable {
 	@Column(name = "nbr_questions", nullable = false)
 	private Short nbrQuestions;
 	
-	@OneToMany(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "theme_du_test", nullable = false)
 	private Theme themeDuTest;
 	

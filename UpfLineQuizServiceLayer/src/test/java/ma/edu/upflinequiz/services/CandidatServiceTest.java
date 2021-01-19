@@ -12,9 +12,6 @@ public class CandidatServiceTest {
 	@Autowired
 	private CandidatService candidatService;
 
-	/**
-	 * test
-	 * */
     @Test
     public void nomdutest2() {
 

@@ -1,5 +1,6 @@
 package ma.ac.upf.linequiz.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,6 +11,7 @@ import ma.ac.upf.linequiz.entitys.CandidatEntity;
 import ma.ac.upf.linequiz.repositorys.CandidatRepository;
 import ma.ac.upf.linequiz.services.CandidatService;
 
+//Business Service
 @Service("candidatService")
 public class CandidatServiceImpl implements CandidatService {
 
@@ -18,50 +20,44 @@ public class CandidatServiceImpl implements CandidatService {
 
 	@Override
 	public Optional<CandidatEntity> getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return candidatRepository.findById(id);
 	}
 
 	@Override
 	public Optional<List<CandidatEntity>> getAll() {
-		// TODO Auto-generated method stub
-		return null;
+		List<CandidatEntity> lsAccounts = new ArrayList<>();
+		candidatRepository.findAll().forEach(lsAccounts::add);
+		return Optional.ofNullable(lsAccounts);
+	}
+	
+	@Override
+	public boolean existsById(Long id) {
+		return candidatRepository.existsById(id);
 	}
 
 	@Override
 	public void save(CandidatEntity obj) {
-		// TODO Auto-generated method stub
-		
+		candidatRepository.save(obj);		
 	}
 
 	@Override
 	public void save(Iterable<CandidatEntity> objs) {
-		// TODO Auto-generated method stub
-		
+		candidatRepository.saveAll(objs);		
 	}
 
 	@Override
 	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
+		candidatRepository.deleteById(id);
 	}
 
 	@Override
 	public void delete(CandidatEntity obj) {
-		// TODO Auto-generated method stub
-		
+		candidatRepository.delete(obj);		
 	}
 
 	@Override
 	public void deleteAll(Iterable<CandidatEntity> objs) {
-
+		candidatRepository.deleteAll(objs);
 	}
-
-	@Override
-	public boolean existsById(Long id) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-	
 	
 }

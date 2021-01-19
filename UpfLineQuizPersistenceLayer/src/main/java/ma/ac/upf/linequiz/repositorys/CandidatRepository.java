@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ma.ac.upf.linequiz.entitys.CandidatEntity;
 
 @Repository("candidatRepo")
-public interface CandidatRepository extends CrudRepository<CandidatEntity, Long /*id*/>{
+public interface CandidatRepository extends CrudRepository<CandidatEntity, Long /*id data type*/>{
 
 }

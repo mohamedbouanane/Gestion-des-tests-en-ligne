@@ -1,5 +1,6 @@
 package ma.ac.upf.linequiz.services.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,50 +19,46 @@ public class TestServiceImpl implements TestService {
 
 	@Override
 	public Optional<TestEntity> getById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		return testRepository.findById(id);
 	}
 
 	@Override
 	public Optional<List<TestEntity>> getAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void save(TestEntity obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void save(Iterable<TestEntity> objs) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteById(Long id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void delete(TestEntity obj) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void deleteAll(Iterable<TestEntity> objs) {
-		// TODO Auto-generated method stub
-		
+		List<TestEntity> lsAccounts = new ArrayList<>();
+		testRepository.findAll().forEach(lsAccounts::add);
+		return Optional.ofNullable(lsAccounts);
 	}
 
 	@Override
 	public boolean existsById(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		return testRepository.existsById(id);
 	}
+	
+	@Override
+	public void save(TestEntity obj) {
+		testRepository.save(obj);
+	}
+
+	@Override
+	public void save(Iterable<TestEntity> objs) {
+		testRepository.saveAll(objs);
+	}
+
+	@Override
+	public void deleteById(Long id) {
+		testRepository.deleteById(id);
+	}
+
+	@Override
+	public void delete(TestEntity obj) {
+		testRepository.delete(obj);
+	}
+
+	@Override
+	public void deleteAll(Iterable<TestEntity> objs) {
+		testRepository.deleteAll(objs);
+	}
+
+
 	
 }

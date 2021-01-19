@@ -11,17 +11,29 @@
 	</parent>
 	
 	<groupId>ma.ac.upf.linequiz</groupId>
-	<artifactId>UpfLineQuizPersistenceLayer</artifactId>
+	<artifactId>UpfLineQuizDataAccessLayer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<name>UpfLineQuizPersistenceLayer</name>
+	<name>UpfLineQuizDataAccessLayer</name>
 	<description>...</description>
 
 	<properties>
-		<java.version>11</java.version>
+		<java.version>11</java.version>	<!-- 1.8 | 11 -->
 	</properties>
 
 	<dependencies>
+		
+		<!-- ========================================================================= -->
+		<!-- Lombok : (Java annotation library which helps to reduce boilerplate code.)-->
+		<!-- Download & execute : https://projectlombok.org/download 				   -->
+		<!-- ========================================================================= -->
+  
+		<dependency>
+	      <groupId>org.projectlombok</groupId>
+	      <artifactId>lombok</artifactId>
+	      <optional>true</optional>
+	    </dependency>
+		
 		
 		<!-- ============= -->
 		<!-- SQL Connector -->
@@ -31,6 +43,17 @@
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
 		    <scope>runtime</scope>
+		</dependency>
+
+
+		<!-- ==================== -->
+		<!-- Faker data generator | Documentation : https://github.com/DiUS/java-faker -->
+		<!-- ==================== -->
+
+		<dependency>
+		    <groupId>com.github.javafaker</groupId>
+		    <artifactId>javafaker</artifactId>
+		    <version>1.0.2</version>
 		</dependency>
 
 
@@ -49,6 +72,12 @@
 			<scope>test</scope>
 		</dependency>
 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
 		
 		<!-- =========== -->
 		<!-- Embedded DB -->

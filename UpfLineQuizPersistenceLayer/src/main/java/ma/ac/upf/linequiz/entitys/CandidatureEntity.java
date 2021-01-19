@@ -17,24 +17,16 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 @Entity
 @Table(name = "candidature")
 public class CandidatureEntity implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3970969181848861567L;
 
 	@Id
@@ -65,7 +57,7 @@ public class CandidatureEntity implements Serializable {
 		this.candidat = candidat;
 		this.dateHeurDuTest = dateHeurDuTest;
 		this.codeCandidature = codeCandidature;
-		this.noteFinale = noteFinale;		
+		this.noteFinale = noteFinale;
 	}
 		
 }

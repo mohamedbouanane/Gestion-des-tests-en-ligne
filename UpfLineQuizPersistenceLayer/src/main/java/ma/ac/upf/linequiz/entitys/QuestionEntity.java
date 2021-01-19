@@ -15,17 +15,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
 
 @NoArgsConstructor
 @AllArgsConstructor
-@Getter
-@Setter
-@ToString
-
+@Data
 @Entity
 @Table(name = "question")
 public class QuestionEntity implements Serializable {
@@ -48,7 +43,7 @@ public class QuestionEntity implements Serializable {
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "reponse_possibles_fk")
-	List<ReponsePossibleEntity> lsReponsePossibles;
+	private List<ReponsePossibleEntity> lsReponsePossibles;
 
 	
 	public QuestionEntity(String enonceQuestion, Boolean reponsesMultyples,

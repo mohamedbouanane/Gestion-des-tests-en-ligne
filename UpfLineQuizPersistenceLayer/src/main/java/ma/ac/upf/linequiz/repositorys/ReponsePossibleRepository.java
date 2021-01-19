@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ma.ac.upf.linequiz.entitys.ReponsePossibleEntity;
 
 @Repository("reponsePossibleRepo")
-public interface ReponsePossibleRepository extends CrudRepository<ReponsePossibleEntity, Long /*id*/>{
+public interface ReponsePossibleRepository extends CrudRepository<ReponsePossibleEntity, Long /*id data type*/>{
 
 }

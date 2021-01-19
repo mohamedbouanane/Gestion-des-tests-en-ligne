@@ -23,6 +23,7 @@
 
 	<properties>
 		<java.version>11</java.version>
+		<jasypt.version>2.1.1</jasypt.version>
 	</properties>
 
 	<dependencies>
@@ -36,11 +37,23 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
+				
+		<!--jasypt configuration file encryption and decryption-->
 		
+	    <dependency>
+	      <groupId>com.github.ulisesbocchio</groupId>
+	      <artifactId>jasypt-spring-boot-starter</artifactId>
+	      <version>${jasypt.version}</version>
+	    </dependency>
 
 		<!-- ===================== -->
 		<!-- Spring Boot Framework -->
 		<!-- ===================== -->
+				
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency> 
 				
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -48,11 +61,30 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+
+		<!-- Spring Boot mailing -->
+		
+	    <dependency>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-mail</artifactId>
+	    </dependency>
+	    
+<!--
+	    <dependency>
+	      <groupId>cn.hutool</groupId>
+	      <artifactId>hutool-all</artifactId>
+	    </dependency>
+-->
+
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+			
 	</dependencies>
 
 	<build>
