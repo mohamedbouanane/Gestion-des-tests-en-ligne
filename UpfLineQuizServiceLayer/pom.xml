@@ -22,8 +22,9 @@
 	<description>...</description>
 
 	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>11</java.version>
-		<jasypt.version>2.1.1</jasypt.version>
 	</properties>
 
 	<dependencies>
@@ -37,47 +38,60 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 		</dependency>
-				
-		<!--jasypt configuration file encryption and decryption-->
 		
-	    <dependency>
-	      <groupId>com.github.ulisesbocchio</groupId>
-	      <artifactId>jasypt-spring-boot-starter</artifactId>
-	      <version>${jasypt.version}</version>
-	    </dependency>
+		
+		<!-- ==================== -->
+		<!-- Faker data generator | Documentation : https://github.com/DiUS/java-faker -->
+		<!-- ==================== -->
+<!--
+		<dependency>
+		    <groupId>com.github.javafaker</groupId>
+		    <artifactId>javafaker</artifactId>
+		    <version>1.0.2</version>
+		</dependency>
+		-->
 
 		<!-- ===================== -->
 		<!-- Spring Boot Framework -->
 		<!-- ===================== -->
 				
+				<!-- 		
 		<dependency>
-		    <groupId>org.springframework.boot</groupId>
-		    <artifactId>spring-boot-starter-data-jpa</artifactId>
-		</dependency> 
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		--> 
 				
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
+				
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency> 
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-context-support</artifactId>
 		</dependency>
-
-		<!-- Spring Boot mailing -->
-		
-	    <dependency>
-	      <groupId>org.springframework.boot</groupId>
-	      <artifactId>spring-boot-starter-mail</artifactId>
-	    </dependency>
-	    
-<!--
-	    <dependency>
-	      <groupId>cn.hutool</groupId>
-	      <artifactId>hutool-all</artifactId>
-	    </dependency>
--->
+	
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

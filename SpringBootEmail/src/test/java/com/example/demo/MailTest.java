@@ -1,34 +1,37 @@
-package ma.edu.upflinequiz.services;
+package com.example.demo;
 
 import javax.mail.MessagingException;
 
 import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.test.context.junit4.SpringRunner;
 
-//import com.sun.tools.javac.util.Context;
-
-import ma.ac.upf.linequiz.services.mailing.MailService;
-import ma.ac.upf.linequiz.services.mailing.MailServiceImpl;
+import mailing.EmailCfg;
+import mailing.MailSenderService;
+import mailing.MailSenderServiceImpl;
 
 @SpringBootTest
 class MailTest /*extends SpringBootDemoEmailApplicationTests*/ {
 
-
+/*
 	   @Autowired
 	    private MailService mailService;
-	    /*@Autowired
-	    private TemplateEngine templateEngine;*/
+	    //@Autowired
+	    //private TemplateEngine templateEngine;
 	    @Autowired
 	    private ApplicationContext context;
-
+*/
 	    /**
 	     * 测试简单邮件
 	     */
 	    @Test
 	    public void sendSimpleMail() {
-	        mailService.sendSimpleMail("237497819@qq.com", "这是一封简单邮件", "这是一封普通的SpringBoot测试邮件");
+	    	MailSenderServiceImpl mailServiceImpl = new MailSenderServiceImpl(new EmailCfg());
+	    	//mailServiceImpl.sendSimpleMail("goog11@lool.io", "9d324a0e27-38839d@inbox.mailtrap.io","Good job!", "wiiiiiiiiiii");
 	    }
 
 	    /**

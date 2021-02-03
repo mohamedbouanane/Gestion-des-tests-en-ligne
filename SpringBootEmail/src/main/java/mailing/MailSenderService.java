@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.services.mailing;
+package mailing;
 
 import javax.mail.MessagingException;
 
@@ -7,7 +7,7 @@ import javax.mail.MessagingException;
  * Mail interface
  * </p>
  */
-public interface MailService {
+public interface MailSenderService {
 	
     /**
      * Send text mail
@@ -17,7 +17,7 @@ public interface MailService {
      * @param content Mail content
      * @param cc      Copy Address
      */
-    void sendSimpleMail(String to, String subject, String content, String... cc);
+    void sendSimpleMail(String from, String to, String subject, String content, String... cc);
 
     /**
      * Send HTML email
@@ -28,7 +28,7 @@ public interface MailService {
      * @param cc      CC address
      * @throws MessagingException Mail exception
      */
-    void sendHtmlMail(String to, String subject, String content, String... cc) throws MessagingException;
+    void sendHtmlMail(String from, String to, String subject, String content, String... cc) throws MessagingException;
 
     /**
      * Send email with attachment
@@ -40,7 +40,7 @@ public interface MailService {
      * @param cc       CC address
      * @throws MessagingException Mail exception
      */
-    void sendAttachmentsMail(String to, String subject, String content, String filePath, String... cc) throws MessagingException;
+    void sendAttachmentsMail(String from, String to, String subject, String content, String filePath, String... cc) throws MessagingException;
 
     /**
      * Send email with static resources in the body
@@ -53,6 +53,6 @@ public interface MailService {
      * @param cc      CC address
      * @throws MessagingException Mail exception
      */
-    void sendResourceMail(String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException;
+    void sendResourceMail(String from, String to, String subject, String content, String rscPath, String rscId, String... cc) throws MessagingException;
 
 }

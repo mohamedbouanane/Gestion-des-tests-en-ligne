@@ -13,11 +13,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 class HttpRequestTest {
 
-	@LocalServerPort
-	private int port;
+	//@LocalServerPort
+	//private int port;
 
-	@Autowired
-	private TestRestTemplate restTemplate;
+	//@Autowired
+	//private TestRestTemplate restTemplate;
 
 	@Test
 	public void greetingShouldReturnDefaultMessage() throws Exception {

@@ -1,17 +1,23 @@
+# DB connection config, Read more : https://docs.spring.io/spring-boot/docs/current/reference/html/appendix-application-properties.html#common-application-properties-json
+
 spring:
-  mail:
-    host: smtp.mailtrap.io
-    port: 2525
-    username: 066de92fa1bdc0
-    password: e03bc6ef02d807
-    protocol: smtp
-    test-connection: true
-    default-encoding: UTF-8
-    
+  jpa:
+    database: mysql
+    show-sql: false
     properties:
-      mail.smtp.auth: true
-      mail.smtp.starttls.enable: true
-      mail.smtp.starttls.required: true
-      mail.smtp.ssl.enable: false
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        ddl-auto: update
+        #ddl-auto: create
+    
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3308/upflinequizdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    platform: mysql
+    username: root
+    password:
+    
+server:
+  port: 8086
 
       

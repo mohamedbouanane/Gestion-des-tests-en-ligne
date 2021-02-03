@@ -1,0 +1,17 @@
+# https://www.baeldung.com/spring-email
+# mailtrap : https://mailtrap.io/signin
+spring:
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: 066de92fa1bdc0
+    password: e03bc6ef02d807
+    protocol: smtp
+    test-connection: true
+    default-encoding: UTF-8
+    
+    properties:
+      mail.smtp.auth: true
+      mail.smtp.starttls.enable: true
+      mail.smtp.starttls.required: true
+      mail.smtp.ssl.enable: false
