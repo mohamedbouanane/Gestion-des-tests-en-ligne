@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.entitys;
+package ma.ac.upf.linequiz.dao.entities;
 
 import java.io.Serializable;
 import java.time.OffsetDateTime;
@@ -43,7 +43,7 @@ public class CandidatureEntity implements Serializable {
 	
 	@OneToMany(fetch = FetchType.LAZY)
 	@JoinColumn(name = "reponse_fk")
-	List<ReponsePossibleEntity> lsReponse;
+	private List<ReponsePossibleEntity> lsReponse;
 	
 	@Column(name="code_candidature", length=10, nullable=true)
 	private String codeCandidature;
@@ -51,7 +51,6 @@ public class CandidatureEntity implements Serializable {
 	@Column(name="note_finale", length=7, nullable=true)
 	private String noteFinale;
 
-	
 	public CandidatureEntity(CandidatEntity candidat, OffsetDateTime dateHeurDuTest , String codeCandidature, String noteFinale) {
 		super();
 		this.candidat = candidat;

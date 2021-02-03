@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.entitys;
+package ma.ac.upf.linequiz.dao.entities;
 
 import java.io.Serializable;
 import java.util.List;
@@ -49,7 +49,7 @@ public class TestEntity implements Serializable {
 	
 	@OneToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "theme_du_test", nullable = false)
-	private Theme themeDuTest;
+	private ThemeEntity themeDuTest;
 	
 	@Column(name = "description", nullable = true)
 	private String description;
@@ -59,7 +59,7 @@ public class TestEntity implements Serializable {
 	private List<DateDuTestEntity> lsDateDuTests;
 	
 	
-	public TestEntity(List<QuestionEntity> lsQuestions, Short nbrSegondsParQuestion, Short nbrQuestions, Theme themeDuTest,
+	public TestEntity(List<QuestionEntity> lsQuestions, Short nbrSegondsParQuestion, Short nbrQuestions, ThemeEntity themeDuTest,
 			String description, List<DateDuTestEntity> lsDateDuTests) {
 		super();
 		this.lsQuestions = lsQuestions;

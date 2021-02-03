@@ -1,7 +1,4 @@
-package ma.ac.upf.linequiz.services;
-
-import java.util.List;
-import java.util.Optional;
+package ma.ac.upf.linequiz.services.businessservices;
 
 public interface IService <T,ID> {
 
@@ -10,42 +7,41 @@ public interface IService <T,ID> {
 	/**
 	 * Get object from database by id.
 	 */
-	Optional<T> getById(ID id);	
+	//Optional<T> getById(ID id);	
 	
 	/**
 	 * Fetch all objects from database.
 	 */
-	Optional<List<T>> getAll();
+	//Optional<List<T>> getAll();
 	
 	/**
 	 * Preserve / Update object in database.
 	 */
-	void save(T obj);	
+	//void save(T obj);	
 	
 	/**
 	 * Preserve list of objects in database.
 	 */
-	void save(Iterable<T> objs);
+	//void save(Iterable<T> objs);
 
 	/**
 	 * Delete object from database by id.
 	 */
-	void deleteById(ID id);
+	//void deleteById(ID id);
 	
 	/**
 	 * Delete object from database.
 	 */
-	void delete(T obj);
+	//void delete(T obj);
 	
 	/**
 	 * Delete list of objects from database.
 	 */
-	void deleteAll(Iterable<T> objs);
-	
+	//void deleteAll(Iterable<T> objs);
 	
 	/**
 	 * Check if object exist in database by id.
 	 */
-	boolean existsById (ID id);
+	//boolean existsById (ID id);
 
 }

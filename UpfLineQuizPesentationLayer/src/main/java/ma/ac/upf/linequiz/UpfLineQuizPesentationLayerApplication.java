@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.presentation;
+package ma.ac.upf.linequiz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

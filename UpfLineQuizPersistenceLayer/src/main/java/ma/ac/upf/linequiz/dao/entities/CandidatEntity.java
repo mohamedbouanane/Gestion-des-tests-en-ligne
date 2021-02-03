@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.entitys;
+package ma.ac.upf.linequiz.dao.entities;
 
 import javax.persistence.Id;
 import javax.persistence.Table;

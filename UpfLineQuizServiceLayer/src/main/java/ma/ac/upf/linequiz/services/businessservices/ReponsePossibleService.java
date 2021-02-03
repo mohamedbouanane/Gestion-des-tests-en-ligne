@@ -1,7 +1,7 @@
-package ma.ac.upf.linequiz.services;
+package ma.ac.upf.linequiz.services.businessservices;
 
-import ma.ac.upf.linequiz.entitys.ReponsePossibleEntity;
+import ma.ac.upf.linequiz.dao.entities.ReponsePossibleEntity;
 
-public interface ReponsePossibleService extends IService<ReponsePossibleEntity ,Long> {
+public interface ReponsePossibleService extends CrudService<ReponsePossibleEntity ,Long> {
 
 }

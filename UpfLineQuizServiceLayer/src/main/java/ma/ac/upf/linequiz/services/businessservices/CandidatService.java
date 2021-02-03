@@ -1,7 +1,8 @@
-package ma.ac.upf.linequiz.services;
+package ma.ac.upf.linequiz.services.businessservices;
 
-import ma.ac.upf.linequiz.entitys.CandidatEntity;
+import ma.ac.upf.linequiz.dao.entities.CandidatEntity;
 
-public interface CandidatService extends IService<CandidatEntity ,Long> {
+public interface CandidatService extends CrudService<CandidatEntity ,Long> {
 
+	
 }

@@ -1,7 +1,7 @@
-package ma.ac.upf.linequiz.services;
+package ma.ac.upf.linequiz.services.businessservices;
 
-import ma.ac.upf.linequiz.entitys.TestEntity;
+import ma.ac.upf.linequiz.dao.entities.TestEntity;
 
-public interface TestService extends IService<TestEntity ,Long> {
+public interface TestService extends CrudService<TestEntity ,Long> {
 
 }

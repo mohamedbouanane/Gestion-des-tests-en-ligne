@@ -1,7 +1,7 @@
-package ma.ac.upf.linequiz.services;
+package ma.ac.upf.linequiz.services.businessservices;
 
-import ma.ac.upf.linequiz.entitys.QuestionEntity;
+import ma.ac.upf.linequiz.dao.entities.QuestionEntity;
 
-public interface QuestionService extends IService<QuestionEntity ,Long> {
+public interface QuestionService extends CrudService<QuestionEntity ,Long> {
 
 }

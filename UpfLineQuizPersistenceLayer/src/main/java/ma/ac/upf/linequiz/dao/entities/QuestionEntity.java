@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.entitys;
+package ma.ac.upf.linequiz.dao.entities;
 
 import java.io.Serializable;
 import java.util.List;

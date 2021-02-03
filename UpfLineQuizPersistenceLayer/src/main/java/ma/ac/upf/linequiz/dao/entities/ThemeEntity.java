@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.entitys;
+package ma.ac.upf.linequiz.dao.entities;
 
 import java.io.Serializable;
 
@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name = "theme")
-public class Theme implements Serializable {
+public class ThemeEntity implements Serializable {
 
 	private static final long serialVersionUID = 7755563995629845603L;
 	
@@ -31,7 +31,7 @@ public class Theme implements Serializable {
 	private String titre;
 
 	
-	public Theme(String titre) {
+	public ThemeEntity(String titre) {
 		super();
 		this.titre = titre;
 	}
