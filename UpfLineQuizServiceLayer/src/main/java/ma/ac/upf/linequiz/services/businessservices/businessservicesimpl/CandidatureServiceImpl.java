@@ -1,6 +1,5 @@
 package ma.ac.upf.linequiz.services.businessservices.businessservicesimpl;
 
-
 import org.springframework.stereotype.Service;
 
 import ma.ac.upf.linequiz.dao.entities.CandidatureEntity;

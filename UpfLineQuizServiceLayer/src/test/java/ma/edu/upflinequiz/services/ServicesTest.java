@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import ma.ac.upf.linequiz.dao.UpfLineQuizDAOApplication;
+import ma.ac.upf.linequiz.dao.entities.CandidatEntity;
 import ma.ac.upf.linequiz.dao.entities.ThemeEntity;
+import ma.ac.upf.linequiz.dao.entities.UtilisateurEntity;
 import ma.ac.upf.linequiz.services.UpfLineQuizServiceLayerApplication;
 import ma.ac.upf.linequiz.services.businessservices.CandidatService;
 import ma.ac.upf.linequiz.services.businessservices.CandidatureService;
@@ -21,6 +23,8 @@ import ma.ac.upf.linequiz.services.businessservices.*;
 public class ServicesTest {
 		
 	// Test auto injection
+	@Autowired
+	UtilisateurService utilisateurService;
 	@Autowired
 	CandidatService candidatService;
 	@Autowired
@@ -52,6 +56,55 @@ public class ServicesTest {
     @Test
     public void insertions() {
 
+    	CandidatEntity candidatEntity1 = new CandidatEntity();
+    	CandidatEntity candidatEntity2 = new CandidatEntity();
+    	CandidatEntity candidatEntity3 = new CandidatEntity();
+
+    	candidatEntity1.setNom("Bouanae");
+    	candidatEntity1.setPrenom("Moahmed");
+    	candidatEntity1.setEmail("bouananemohamd@gmail.com");
+    	candidatEntity1.setGsm("0641019223");
+    	candidatEntity1.setEcole("UPF");
+    	candidatEntity1.setFiliere("Génie informatique");
+    	
+    	candidatEntity2.setNom("Bouanae");
+    	candidatEntity2.setPrenom("Moahmed");
+    	candidatEntity2.setEmail("bouananemohamd@gmail.com");
+    	candidatEntity2.setGsm("0641019223");
+    	candidatEntity2.setEcole("UPF");
+    	candidatEntity2.setFiliere("Génie informatique");
+    	
+    	candidatEntity3.setNom("Bouanae");
+    	candidatEntity3.setPrenom("Moahmed");
+    	candidatEntity3.setEmail("bouananemohamd@gmail.com");
+    	candidatEntity3.setGsm("0641019223");
+    	candidatEntity3.setEcole("UPF");
+    	candidatEntity3.setFiliere("Génie informatique");
+    	
+    	
+    	UtilisateurEntity utilisateurEntity1 = new UtilisateurEntity();
+    	UtilisateurEntity utilisateurEntity2 = new UtilisateurEntity();
+    	UtilisateurEntity utilisateurEntity3 = new UtilisateurEntity();
+    	
+    	utilisateurEntity1.setLogin("login1");
+    	utilisateurEntity1.setPassword("password1");
+    	utilisateurEntity1.setCandidat(candidatEntity1);
+    	
+    	utilisateurEntity1.setLogin("login2");
+    	utilisateurEntity1.setPassword("password2");
+    	utilisateurEntity1.setCandidat(candidatEntity1);
+    	
+    	utilisateurEntity1.setLogin("login3");
+    	utilisateurEntity1.setPassword("password3");
+    	utilisateurEntity1.setCandidat(candidatEntity1);
+    	
+    	utilisateurService.saveAll(
+    			utilisateurEntity1,
+    			utilisateurEntity2,
+    			utilisateurEntity3
+    			);
+    	
+    	
     	themeService.saveAll(
     			new ThemeEntity("Orocle"),
     			new ThemeEntity("MySQL"),
@@ -67,14 +120,7 @@ public class ServicesTest {
 
     	/*
     	candidatService.sa(
-    			new CandidatEntity(
-    					"Moahmed",
-    					"Bouanae",
-    					"UPF",
-    					"Génie informatique", 
-    					"bouananemohamd@gmail.com",
-    					"0641019223"
-    					));
+    			
     	
     	/*
     	Faker faker = new Faker();

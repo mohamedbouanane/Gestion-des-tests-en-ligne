@@ -11,21 +11,51 @@
 	</parent>
 	
 	<groupId>ma.ac.upf.linequiz</groupId>
-	<artifactId>UpfLineQuizPesentationLayer</artifactId>
+	<artifactId>UpfLineQuizPresentationLayer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
-	<name>UpfLineQuizPesentationLayer</name>
+	<name>UpfLineQuizPresentationLayer</name>
 	<description>...</description>
 
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 
-	<!-- ===================== -->
-	<!-- Spring Boot Framework -->
-	<!-- ===================== -->
-		
+	
 	<dependencies>
+	
+		<dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version>
+        </dependency>
+	
+		<!-- ===================================== -->
+		<!-- Devtools (auto recompile in save ...) -->
+		<!-- Not: Remouve it befor deploiment -->
+		<!-- ===================================== -->
+		<!--
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+	-->
+		<!-- ===================== -->
+		<!-- Spring Boot Framework -->
+		<!-- ===================== -->
+	
+			<!-- 		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		--> 
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -46,7 +76,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web-services</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -70,7 +99,13 @@
 		<!-- ======= -->
 		<!-- Testing -->
 		<!-- ======= -->
-
+		 
+		<dependency>
+            <groupId>com.jayway.jsonpath</groupId>
+            <artifactId>json-path</artifactId>
+            <scope>test</scope>
+        </dependency>
+		 
 		<dependency>
 			<groupId>io.projectreactor</groupId>
 			<artifactId>reactor-test</artifactId>

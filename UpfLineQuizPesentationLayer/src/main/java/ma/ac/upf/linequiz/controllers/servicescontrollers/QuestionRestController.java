@@ -1,4 +1,4 @@
-package ma.ac.upf.linequiz.services.controllers.restcontrollers;
+package ma.ac.upf.linequiz.controllers.servicescontrollers;
 
 public class QuestionRestController {
 

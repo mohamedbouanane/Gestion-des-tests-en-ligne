@@ -15,13 +15,13 @@ import ma.ac.upf.linequiz.services.businessservices.CrudService;
 public abstract class CrudServiceImpl <Entity, Id, Repository extends CrudRepository<Entity, Id>> implements CrudService <Entity, Id> {
 
 	@Autowired
-	private Repository crudRepository;
+	protected Repository repository;
 	
 	@Override
 	public Optional<List<Entity>> getAll() {
 		List<Entity> itemsCollection = new ArrayList<>();
 		
-		Iterable<Entity> itemsIterable = crudRepository.findAll();
+		Iterable<Entity> itemsIterable = repository.findAll();
 		Iterator<Entity> itemsIterator = itemsIterable.iterator();
 		
 		while(itemsIterator.hasNext())
@@ -37,7 +37,7 @@ public abstract class CrudServiceImpl <Entity, Id, Repository extends CrudReposi
 	@SuppressWarnings("unchecked")
 	public Optional<List<Entity>> getByIds(Id... ids) {
 		List<Entity> itemsCollection = new ArrayList<>();
-		Iterable<Entity> itemsIterable = crudRepository.findAllById(Arrays.asList(ids));
+		Iterable<Entity> itemsIterable = repository.findAllById(Arrays.asList(ids));
 		Iterator<Entity> itemsIterator = itemsIterable.iterator();
 		
 		while(itemsIterator.hasNext())
@@ -55,23 +55,23 @@ public abstract class CrudServiceImpl <Entity, Id, Repository extends CrudReposi
 	@Override
 	@SuppressWarnings("unchecked")
 	public void saveAll(Entity... objs) {
-		crudRepository.saveAll(Arrays.asList(objs));
+		repository.saveAll(Arrays.asList(objs));
 	}
 
 	@Override
 	public void save(Entity obj) {
-		crudRepository.save(obj);
+		repository.save(obj);
 	}
 	
 	@Override
 	@SuppressWarnings("unchecked")
 	public void deleteAll(Entity... objs) {
-		crudRepository.deleteAll(Arrays.asList(objs));
+		repository.deleteAll(Arrays.asList(objs));
 	}
 
 	@Override
 	public boolean existsById(Id id) {
-		return crudRepository.existsById(id);
+		return repository.existsById(id);
 	}
 	
 }

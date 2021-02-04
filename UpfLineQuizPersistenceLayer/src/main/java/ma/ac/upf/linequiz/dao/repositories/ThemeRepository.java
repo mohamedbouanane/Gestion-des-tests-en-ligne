@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import ma.ac.upf.linequiz.dao.entities.ThemeEntity;
 
 @Repository("themeRepo")
-public interface ThemeRepository extends CrudRepository<ThemeEntity, Long>{
+public interface ThemeRepository extends CrudRepository<ThemeEntity, Long> {
 
 }
